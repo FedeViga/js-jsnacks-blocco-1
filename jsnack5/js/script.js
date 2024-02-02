@@ -16,14 +16,16 @@ buttonElement.addEventListener('click' ,
         console.log(N);
         let array = [];
 
-        // se il numero è minore di 100 procedo 
-        if (N < 100) {
+        // se il numero è minore di 1000 procedo (evitiamo di impallare il pc :D)
+        if (N < 1000) {
 
             // ciclo for per inserire i numeri da 1 a N nell'array e per calcolarne i cubi
             for (let i = 1; i <= N; i++) {
                 array[i - 1] = Math.pow(i, 3);
-                document.querySelector("#result").innerHTML = array;
+                document.querySelector("#result").innerHTML = "Lista dei cubi dei numeri da 1 a " + N + "<br>" + array.join(', ');
             }
+        } else {
+            document.querySelector("#result").innerHTML = "Inserisci un numero più piccolo, non rischiare di impallare il pc :/"
         }
     }
 )
